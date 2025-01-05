@@ -24,7 +24,6 @@ addEventListener('DOMContentLoaded', () => {
 
         for (let i = 1; i <= cellNumber; i++) {
             const cellID = document.querySelector(`[cell-id="${i}"]`);
-            console.log(cellID);
             cellID.addEventListener('mouseover', () => {
                 if (cellID.classList.contains('transition-out')) {
                     cellID.classList.replace('transition-out', 'transition-in');
