@@ -40,7 +40,7 @@ html, body {
 }
 
 .grid-cell {
-    width: 6% !important;
+    width: 1% !important;
     justify-content: center;
     height: auto;
     background-color: lightgray;
