@@ -1,0 +1,20 @@
+html, body { margin: 0; padding: 0; }
+
+#grid-container {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.gridCell {
+    width: 6% !important;
+    justify-content: center;
+    height: auto;
+    background-color: lightgray;
+    border: 1px solid black;
+}
