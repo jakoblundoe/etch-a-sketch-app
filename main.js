@@ -1,4 +1,4 @@
-let cellNumber = 4096;
+let cellNumber = 256;
 
 addEventListener('DOMContentLoaded', () => {
     const gridContainer = document.querySelector('#grid-container');
@@ -7,26 +7,32 @@ addEventListener('DOMContentLoaded', () => {
     resetBtn.addEventListener('click', () => {
         let gridDensity = window.prompt("Specify grid density by entering number of squares per row:")
         if (gridDensity <= 0 || gridDensity === null || gridDensity > 100) {
-            cellNumber = 4096;
+            cellNumber = 256;
             gridContainer.replaceChildren();
-            generateNewGrid();
+            generateNewGrid(Math.sqrt(cellNumber));
         } else {
             cellNumber = calcCellAmount(gridDensity);
             gridContainer.replaceChildren();
-            generateNewGrid();
+            generateNewGrid(Math.sqrt(cellNumber));
         }
     })
 
-    generateNewGrid()
+    generateNewGrid(Math.sqrt(cellNumber));
 
-    function generateNewGrid() {
+    function generateNewGrid(rowSize) {
+        console.log(rowSize);
+
+
+        // GRID CREATION
         for (let i = 1; i <= cellNumber; i++) {
             const gridCell = document.createElement('div');
             gridCell.classList.add('grid-cell');
             gridCell.setAttribute(`cell-id`, String(i));
+            gridCell.style.width = `calc(${calcCellWidth(rowSize)}% - 2px)`;
             gridContainer.appendChild(gridCell);
         }
 
+        //HOVER FEATURE
         for (let i = 1; i <= cellNumber; i++) {
             const cellID = document.querySelector(`[cell-id="${i}"]`);
             cellID.addEventListener('mouseover', () => {
@@ -48,4 +54,8 @@ addEventListener('DOMContentLoaded', () => {
 
 function calcCellAmount (input) {
     return input*input;
+}
+
+function calcCellWidth (input) {
+    return 100/input;
 }
