@@ -1,14 +1,23 @@
+let cellNumber = 4096;
+
 addEventListener('DOMContentLoaded', () => {
     const gridContainer = document.querySelector('#grid-container');
+    const resetBtn = document.querySelector('#generate-grid-btn');
 
-    for (let i = 1; i <= 256; i++) {
+    resetBtn.addEventListener('click', () => {
+        let gridDensity = window.prompt("Specify grid density by entering number of squares per row:")
+        cellNumber = calcCellAmount(gridDensity);
+        console.log(cellNumber);
+    })
+
+    for (let i = 1; i <= cellNumber; i++) {
         const gridCell = document.createElement('div');
         gridCell.classList.add('grid-cell');
         gridCell.setAttribute(`cell-id`, String(i));
         gridContainer.appendChild(gridCell);
     }
 
-    for (let i = 1; i <= 256; i++) {
+    for (let i = 1; i <= cellNumber; i++) {
         const cellID = document.querySelector(`[cell-id="${i}"]`);
         console.log(cellID);
         cellID.addEventListener('mouseover', () => {
@@ -25,3 +34,7 @@ addEventListener('DOMContentLoaded', () => {
         })
     }
 })
+
+function calcCellAmount (input) {
+    return input*input;
+}
