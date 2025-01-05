@@ -6,10 +6,15 @@ addEventListener('DOMContentLoaded', () => {
 
     resetBtn.addEventListener('click', () => {
         let gridDensity = window.prompt("Specify grid density by entering number of squares per row:")
-        cellNumber = calcCellAmount(gridDensity);
-        console.log(cellNumber);
-        gridContainer.replaceChildren();
-        generateNewGrid();
+        if (gridDensity <= 0 || gridDensity === null || gridDensity > 100) {
+            cellNumber = 4096;
+            gridContainer.replaceChildren();
+            generateNewGrid();
+        } else {
+            cellNumber = calcCellAmount(gridDensity);
+            gridContainer.replaceChildren();
+            generateNewGrid();
+        }
     })
 
     generateNewGrid()
