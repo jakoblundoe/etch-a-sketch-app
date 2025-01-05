@@ -20,5 +20,13 @@ html, body { margin: 0; padding: 0; }
 }
 
 .pixel-hover {
-    background-color: darkgray;
+    background-color: #393939;
+}
+
+.transition-in {
+    transition-duration: 0s;
+}
+
+.transition-out {
+    transition-duration: 3.5s;
 }

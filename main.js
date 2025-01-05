@@ -12,9 +12,15 @@ addEventListener('DOMContentLoaded', () => {
         const cellID = document.querySelector(`[cell-id="${i}"]`);
         console.log(cellID);
         cellID.addEventListener('mouseover', () => {
+            if (cellID.classList.contains('transition-out')) {
+                cellID.classList.replace('transition-out', 'transition-in');
+            } else {
+                cellID.classList.add('transition-in');
+            }
             cellID.classList.add('pixel-hover');
         })
         cellID.addEventListener('mouseout', () => {
+            cellID.classList.replace('transition-in', 'transition-out');
             cellID.classList.remove('pixel-hover');
         })
     }
