@@ -11,10 +11,14 @@ html, body { margin: 0; padding: 0; }
     height: 100vh;
 }
 
-.gridCell {
+.grid-cell {
     width: 6% !important;
     justify-content: center;
     height: auto;
     background-color: lightgray;
     border: 1px solid black;
+}
+
+.pixel-hover {
+    background-color: darkgray;
 }
