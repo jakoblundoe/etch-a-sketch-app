@@ -23,7 +23,7 @@ html, body {
     justify-content: center;
     height: auto;
     background-color: lightgray;
-    border: 1px solid darkgray;
+    border: 1px solid white;
 }
 
 .pixel-hover {
