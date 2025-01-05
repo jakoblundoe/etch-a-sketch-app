@@ -7,9 +7,15 @@ html, body {
     height: 100dvh;
 }
 
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+}
+
 #generate-grid-btn {
-    position: fixed;
-    top: 50px;
     padding: 8px 16px 6px 16px;
     border-radius: 3px;
     transition: background 0.1s;
