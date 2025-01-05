@@ -59,6 +59,6 @@ html, body {
 }
 
 .transition-out {
-    transition-duration: 2s;
+    transition-duration: 20s;
     transition-timing-function: ease-in-out;
 }
