@@ -50,8 +50,8 @@ addEventListener('DOMContentLoaded', () => {
         for (let i = 1; i <= cellNumber; i++) {
             const cellID = document.querySelector(`[cell-id="${i}"]`);
             const colorCode = generateColor();
-            let opacityValue = 100;
-            let opacityInitFlag = false;
+            let brightnessValue = 100;
+            let brightnessInitFlag = false;
 
             cellID.addEventListener('mouseover', () => {
                 if (mouseBtnPressed) {
@@ -61,13 +61,13 @@ addEventListener('DOMContentLoaded', () => {
                         cellID.classList.add('transition-in');
                     }
                     cellID.style['background-color'] = colorCode;
-                    if (!opacityInitFlag) {
-                        cellID.style['opacity'] = opacityValue;
-                        opacityInitFlag = true;
+                    if (!brightnessInitFlag) {
+                        cellID.style['opacity'] = brightnessValue;
+                        brightnessInitFlag = true;
                     } else {
-                        if (opacityValue > 12) {
-                            opacityValue = opacityValue - 8;
-                            cellID.style['filter'] = `brightness(${opacityValue}%)`;
+                        if (brightnessValue > 12) {
+                            brightnessValue = brightnessValue - 8;
+                            cellID.style['filter'] = `brightness(${brightnessValue}%)`;
                         }
                     }
                 }
