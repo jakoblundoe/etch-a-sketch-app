@@ -1,4 +1,6 @@
 html, body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0.1rem;
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,12 +11,17 @@ html, body {
     max-width: 100dvw;
 }
 
+h1 {
+    color: #383840;
+    margin: 28px 0 32px 0;
+}
+
 #wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 32px;
-    gap: 50px;
+    gap: 42px;
     align-items: center;
 }
 
@@ -22,7 +29,9 @@ html, body {
     padding: 8px 16px 6px 16px;
     border-radius: 2px;
     transition: background 0.1s;
-    font-size: medium;
+    font-size: large;
+    color: #383840;
+    border: 2px solid #515151;
 }
 
 #generate-grid-btn:hover {
@@ -40,7 +49,7 @@ html, body {
     padding: 0;
     width: 960px;
     height: 960px;
-}
+    border: 1px solid darkgrey;
 
 .grid-cell {
     justify-content: center;
