@@ -3,6 +3,13 @@ let cellNumber = 256;
 addEventListener('DOMContentLoaded', () => {
     const gridContainer = document.querySelector('#grid-container');
     const resetBtn = document.querySelector('#generate-grid-btn');
+    let mouseBtnPressed = false;
+
+    gridContainer.addEventListener('mousedown', (e) => {
+        if (e.button === 0) {
+            console.log('mousebutton pressed');
+        }
+    })
 
     resetBtn.addEventListener('click', () => {
         let gridDensity = window.prompt("Specify grid density by entering number of squares per row:")
