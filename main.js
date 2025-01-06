@@ -5,9 +5,17 @@ addEventListener('DOMContentLoaded', () => {
     const resetBtn = document.querySelector('#generate-grid-btn');
     let mouseBtnPressed = false;
 
-    gridContainer.addEventListener('mousedown', (e) => {
+    window.addEventListener('mousedown', (e) => {
         if (e.button === 0) {
             console.log('mousebutton pressed');
+            mouseBtnPressed = true;
+        }
+        e.preventDefault();
+    })
+    window.addEventListener('mouseup', (e) => {
+        if (e.button === 0) {
+            console.log('mousebutton released');
+            mouseBtnPressed = false;
         }
     })
 
@@ -46,19 +54,21 @@ addEventListener('DOMContentLoaded', () => {
             let opacityInitFlag = false;
 
             cellID.addEventListener('mouseover', () => {
-                if (cellID.classList.contains('transition-out')) {
-                    cellID.classList.replace('transition-out', 'transition-in');
-                } else {
-                    cellID.classList.add('transition-in');
-                }
-                cellID.style['background-color'] = colorCode;
-                if (!opacityInitFlag) {
-                    cellID.style['opacity'] = opacityValue;
-                    opacityInitFlag = true;
-                } else {
-                    if (opacityValue > 12) {
-                        opacityValue = opacityValue - 8;
-                        cellID.style['filter'] = `brightness(${opacityValue}%)`;
+                if (mouseBtnPressed) {
+                    if (cellID.classList.contains('transition-out')) {
+                        cellID.classList.replace('transition-out', 'transition-in');
+                    } else {
+                        cellID.classList.add('transition-in');
+                    }
+                    cellID.style['background-color'] = colorCode;
+                    if (!opacityInitFlag) {
+                        cellID.style['opacity'] = opacityValue;
+                        opacityInitFlag = true;
+                    } else {
+                        if (opacityValue > 12) {
+                            opacityValue = opacityValue - 8;
+                            cellID.style['filter'] = `brightness(${opacityValue}%)`;
+                        }
                     }
                 }
             })
