@@ -49,11 +49,12 @@ addEventListener('DOMContentLoaded', () => {
                     cellID.style['opacity'] = opacityValue;
                     opacityInitFlag = true;
                 } else {
-                    if (opacityValue > 0) {
-                        opacityValue = opacityValue - 10;
+                    if (opacityValue > 12) {
+                        opacityValue = opacityValue - 8;
                         cellID.style['filter'] = `brightness(${opacityValue}%)`;
                     }
                 }
+                console.log(opacityValue);
             })
             cellID.addEventListener('mouseout', () => {
                 cellID.classList.replace('transition-in', 'transition-out');
