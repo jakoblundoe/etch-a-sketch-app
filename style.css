@@ -51,12 +51,12 @@ html, body {
 }
 
 .transition-in {
-    transition-property: background-color, opacity;
+    transition-property: background-color, filter;
     transition-duration: 0s;
 }
 
 .transition-out {
-    transition-property: background-color, opacity;
+    transition-property: background-color, filter;
     transition-duration: 20s;
     transition-timing-function: ease-in-out;
 }

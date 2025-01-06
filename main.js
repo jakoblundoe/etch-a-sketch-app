@@ -51,18 +51,18 @@ addEventListener('DOMContentLoaded', () => {
                     opacityInitFlag = true;
                     console.log(cellID);
                 } else {
-                    if (opacityvalue > 0) {
+                    if (opacityValue > 0) {
+                        console.log(opacityValue);
                         opacityValue = opacityValue - 10;
-                        cellID.style['opacity'] = opacityValue;
+                        cellID.style['filter'] = `brightness(${opacityValue}%)`;
                     }
                     console.log(cellID);
                 }
-
             })
             cellID.addEventListener('mouseout', () => {
                 cellID.classList.replace('transition-in', 'transition-out');
                 cellID.style.removeProperty('background-color');
-                cellID.style.removeProperty('opacity');
+                cellID.style.removeProperty('filter');
             })
         }
     }
