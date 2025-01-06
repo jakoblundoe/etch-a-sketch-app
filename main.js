@@ -36,19 +36,31 @@ addEventListener('DOMContentLoaded', () => {
         for (let i = 1; i <= cellNumber; i++) {
             const cellID = document.querySelector(`[cell-id="${i}"]`);
             const colorCode = generateColor();
+            let opacityValue = 100;
+            let opacityInitFlag = false;
 
             cellID.addEventListener('mouseover', () => {
                 if (cellID.classList.contains('transition-out')) {
                     cellID.classList.replace('transition-out', 'transition-in');
-                    cellID.style['background-color'] = colorCode;
                 } else {
                     cellID.classList.add('transition-in');
                 }
                 cellID.style['background-color'] = colorCode;
+                if (!opacityInitFlag) {
+                    cellID.style['opacity'] = opacityValue;
+                    opacityInitFlag = true;
+                    console.log(cellID);
+                } else {
+                    opacityValue = opacityValue - 10;
+                    cellID.style['opacity'] = opacityValue;
+                    console.log(cellID);
+                }
+
             })
             cellID.addEventListener('mouseout', () => {
                 cellID.classList.replace('transition-in', 'transition-out');
                 cellID.style.removeProperty('background-color');
+                cellID.style.removeProperty('opacity');
             })
         }
     }
@@ -57,11 +69,11 @@ addEventListener('DOMContentLoaded', () => {
 // GENERATOR COLOR FROM PREDEFINED COLOR PALETTE
 function generateColor () {
     const colorPalette = [
-        '#2A8C82',
-        '#41BFB3',
-        '#9BF2EA',
-        '#275950',
-        '#260101'
+        '#FF5F5D',
+        // '#3F7C85',
+        // '#00CCBF',
+        // '#72F2EB',
+        // '#747E7E'
     ]
     return colorPalette[randomInt(colorPalette.length, 0)];
 }
