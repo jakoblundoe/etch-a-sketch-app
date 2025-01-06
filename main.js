@@ -52,6 +52,7 @@ addEventListener('DOMContentLoaded', () => {
             const colorCode = generateColor();
             let brightnessValue = 100;
             let brightnessInitFlag = false;
+            let timeoutID;
 
             cellID.addEventListener('mouseover', () => {
                 if (mouseBtnPressed) {
@@ -70,12 +71,21 @@ addEventListener('DOMContentLoaded', () => {
                             cellID.style['filter'] = `brightness(${brightnessValue}%)`;
                         }
                     }
+                    if (timeoutID) {
+                        clearTimeout(timeoutID);
+                    }
                 }
             })
             cellID.addEventListener('mouseout', () => {
                 cellID.classList.replace('transition-in', 'transition-out');
                 cellID.style.removeProperty('background-color');
                 cellID.style.removeProperty('filter');
+
+                timeoutID = setTimeout(function () {
+                    console.log('timeoutID', timeoutID);
+                    brightnessValue = 100;
+                    console.log('reset-brightness');
+                }, 20000);
             })
         }
     }
