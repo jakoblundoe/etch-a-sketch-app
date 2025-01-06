@@ -7,14 +7,12 @@ addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('mousedown', (e) => {
         if (e.button === 0) {
-            console.log('mousebutton pressed');
             mouseBtnPressed = true;
         }
         e.preventDefault();
     })
     window.addEventListener('mouseup', (e) => {
         if (e.button === 0) {
-            console.log('mousebutton released');
             mouseBtnPressed = false;
         }
     })
@@ -82,9 +80,7 @@ addEventListener('DOMContentLoaded', () => {
                 cellID.style.removeProperty('filter');
 
                 timeoutID = setTimeout(function () {
-                    console.log('timeoutID', timeoutID);
                     brightnessValue = 100;
-                    console.log('reset-brightness');
                 }, 20000);
             })
         }
