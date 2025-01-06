@@ -46,7 +46,7 @@ html, body {
 .grid-cell {
     justify-content: center;
     height: auto;
-    background-color: lightgray;
+    background-color: whitesmoke;
     border: 1px solid white;
 }
 

@@ -51,8 +51,10 @@ addEventListener('DOMContentLoaded', () => {
                     opacityInitFlag = true;
                     console.log(cellID);
                 } else {
-                    opacityValue = opacityValue - 10;
-                    cellID.style['opacity'] = opacityValue;
+                    if (opacityvalue > 0) {
+                        opacityValue = opacityValue - 10;
+                        cellID.style['opacity'] = opacityValue;
+                    }
                     console.log(cellID);
                 }
 
@@ -69,11 +71,10 @@ addEventListener('DOMContentLoaded', () => {
 // GENERATOR COLOR FROM PREDEFINED COLOR PALETTE
 function generateColor () {
     const colorPalette = [
-        '#FF5F5D',
-        // '#3F7C85',
-        // '#00CCBF',
-        // '#72F2EB',
-        // '#747E7E'
+        '#B5C4DE',
+        '#E2E6E6',
+        '#CACFD2',
+        '#A9B4C0'
     ]
     return colorPalette[randomInt(colorPalette.length, 0)];
 }
