@@ -54,7 +54,6 @@ addEventListener('DOMContentLoaded', () => {
                         cellID.style['filter'] = `brightness(${opacityValue}%)`;
                     }
                 }
-                console.log(opacityValue);
             })
             cellID.addEventListener('mouseout', () => {
                 cellID.classList.replace('transition-in', 'transition-out');
