@@ -21,7 +21,6 @@ addEventListener('DOMContentLoaded', () => {
     generateColor();
 
     function generateNewGrid(rowSize) {
-        console.log(rowSize);
 
         // GRID CREATION
         for (let i = 1; i <= cellNumber; i++) {
@@ -49,14 +48,11 @@ addEventListener('DOMContentLoaded', () => {
                 if (!opacityInitFlag) {
                     cellID.style['opacity'] = opacityValue;
                     opacityInitFlag = true;
-                    console.log(cellID);
                 } else {
                     if (opacityValue > 0) {
-                        console.log(opacityValue);
                         opacityValue = opacityValue - 10;
                         cellID.style['filter'] = `brightness(${opacityValue}%)`;
                     }
-                    console.log(cellID);
                 }
             })
             cellID.addEventListener('mouseout', () => {
